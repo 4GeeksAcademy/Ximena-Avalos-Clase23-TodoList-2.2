@@ -1,12 +1,186 @@
-
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+body {
+    background-color: #6c584c;
+    font-family: 'Allura', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+  }
+  
+  h1 {
+    font-weight: lighter;
+    color: #d6ccc2;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    text-align: center;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .card {
+    position: relative;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(11, 11, 11, 0.472);
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin: 0 auto;
+  }
+  
+  .card-body {
+    padding: 1rem 2rem;
+    overflow-y: auto;
+    flex: 1;
+  }
+  
+  .card-footer {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    color: #d5bdaf;
+    position: relative;
+  }
+  
+  .card::before, 
+  .card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(11, 11, 11, 0.472);
+  }
+  
+  .card::before {
+    bottom: 5px;
+    z-index: 1; 
+  }
+  
+  .card::after {
+    bottom: 10px;
+    z-index: 2; 
+  }
+  
+  .form-control {
+    border: none;
+    border-bottom: 1px solid #d5bdaf;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
+  }
+  
+  .list-group-item {
+    border: none;
+    padding: 0.5rem;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+  
+  .list-group-item span {
+    flex: 1;
+    word-break: break-word;
+  }
+  
+  .list-group-item button {
+    margin-left: auto;
+  }
+  
+  .btn-sm {
+    font-size: 0.75rem;
+    border: none;
+    background-color: transparent;
+  }
+  
+  @media (max-width: 1024px) {
+    .container {
+      width: 90%;
+    }
+    .card {
+      height: 85vh;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+    .card {
+      height: 85vh;
+    }
+    .form-control {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+    .card {
+      height: 85vh;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .form-control {
+      font-size: 0.875rem;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+  }
+  .create-new-user-container {
+    height: 150px;
+    width: 200px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .create-new-user {
+    font-size: 1rem; 
+    text-align: center;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+  }
+  
+  @media (max-width: 768px) {
+    .create-new-user {
+      font-size: 0.875rem; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .create-new-user {
+      font-size: 0.75rem; 
+    }
+  }
