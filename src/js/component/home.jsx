@@ -124,6 +124,22 @@ const Home = () => {
       }
     }
   };
+  const deleteUser = async (username) => {
+    try {
+      const response = await fetch(`https://playground.4geeks.com/todo/users/${username}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      if (!response.ok) throw new Error('Error deleting user');
+      setUsersName(usersName.filter(user => user.name !== username));
+      setUserSelected("");
+      setTaskList([]);
+    } catch (error) {
+      setError(`Error deleting user: ${error.message}`);
+    }
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -144,7 +160,10 @@ const Home = () => {
               <h2 className="select-user">Users</h2>
               <div>
                 {usersName.map((user, index) => (
-                  <p key={index} onClick={() => catchUser(user.name)}>{user.name}</p>
+                  <div key={index} className="d-flex justify-content-between align-items-center">
+                    <p onClick={() => catchUser(user.name)}>{user.name}</p>
+                    <button className="btn btn-danger btn-sm" onClick={() => deleteUser(user.name)}>Delete</button>
+                  </div>
                 ))}
               </div>
             </div>
